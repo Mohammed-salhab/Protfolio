@@ -1,1 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
 @import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root.dark {
+  /* -------- Backgrounds -------- */
+  --color-bg-main: #1B2431;
+
+  /* -------- Text -------- */
+  --color-text-primary: #FFFFFF;
+  --color-text-muted: #98A2B3;
+
+  /* -------- primary -------- */
+  --color-primary: #583FBC;
+
+  /* -------- border -------- */
+  --color-border: #BEC0BF;
+}
+
+/* ============================================= */
+/*              ☀️ LIGHT MODE VARIABLES           */
+/* ============================================= */
+
+:root {
+  /* -------- Backgrounds -------- */
+  --color-bg-main: #ffffff;
+
+  /* -------- Text -------- */
+  --color-text-primary: #1D2130;
+  --color-text-muted: #98A2B3;
+
+  /* -------- primary -------- */
+  --color-primary: #583FBC;
+
+  /* -------- border -------- */
+  --color-border: #BEC0BF;
+}
+
+@theme {
+  --font-poppins: "Poppins", ui-sans-serif, system-ui, sans-serif;
+
+  --color-bgMain: var(--color-bg-main);
+
+  --color-textPrimary: var(--color-text-primary);
+  --color-textMuted: var(--color-text-muted);
+
+  --color-primary: var(--color-primary);
+
+  --color-border: var(--color-border);
+
+}
