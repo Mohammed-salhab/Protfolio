@@ -1,34 +1,45 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// import { useState } from 'react'
+// import Navbar from './components/Navbar'
+// import Hero from './components/Hero'
+// import Divider from './components/Divider'
+// import About from './components/About'
+// import Experience from './components/Experience'
+// import ReachMe from './components/ReachMe'
+// import Projects from './components/Projects'
+// import Contact from './components/Contact'
+// import Footer from './components/Footer'
+import Home from './Pages/Home';
+import Project from './Pages/Project';
+import { ThemeProvider } from './providers/ThemeProvider'
+
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
+// import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <ThemeProvider>
+      <Router>
+      <Routes>
+        <Route path="/" Component={Home}></Route>
+        <Route path="/project/:id" Component={Project}></Route>
+        {/* <Route path="/register" Component={Register}></Route> */}
+      </Routes>
+    </Router>
+    {/* <div className='relative bg-bgMain text-textPrimary font-poppins transition-colors duration-300'>
+    <Navbar />
+    <main className='pt-24'>
+      <Hero/>
+      <Divider/>
+      <About/>
+      <Experience/>
+      <ReachMe/>
+      <Projects/>
+      <Contact/>
+      <Footer/>
+    </main>
+    </div> */}
+    </ThemeProvider>
   )
 }
 
